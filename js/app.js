@@ -6,6 +6,11 @@ let number = document.getElementById("number");
 let description = document.getElementById("description");
 let date = document.getElementById("date");
 let selectStatus = document.getElementById("status");
+const ITEMS_PER_PAGE = 5;
+let currentPage = 1;
+let offset = (currentPage - 1) * ITEMS_PER_PAGE;
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
 
 const openModal = () => {
   modal.style.display = "block";
@@ -45,7 +50,9 @@ const checkFields = () => {
 };
 
 const newTable = async () => {
-  const apiResponse = await fetch("http://localhost:3000/tables");
+  const apiResponse = await fetch(
+    `http://localhost:3000/tables?_start=${offset}&_limit=${ITEMS_PER_PAGE}`
+  );
   const tables = await apiResponse.json();
   const tablesContent = document.getElementById("table-body");
   tablesContent.innerHTML = "";
@@ -59,9 +66,10 @@ const newTable = async () => {
                             <th scope="row">${table.number}</th>
                             <td>${table.description}</td>
                             <td>${date.toLocaleDateString("pt-BR")}</td>
-                            <td class="${table.status.replace(" ", "-")}">${
-        table.status
-      }</td>
+                            <td class="status ${table.status.replace(
+                              " ",
+                              "-"
+                            )}">${table.status}</td>
                             <td>
                                 <button type="button" onclick="editTable(${
                                   table.id
@@ -73,7 +81,38 @@ const newTable = async () => {
                         </tr>
         `;
   });
+  checkNextBtn(tables.length);
 };
+
+const checkPrevBtn = () => {
+  if (currentPage === 1) {
+    prevBtn.disabled = true;
+  } else {
+    prevBtn.disabled = false;
+  }
+};
+
+const checkNextBtn = (length) => {
+  if (length === 0) {
+    nextBtn.disabled = true;
+  } else {
+    nextBtn.disabled = false;
+  }
+};
+
+prevBtn.addEventListener("click", () => {
+  currentPage--;
+  offset = (currentPage - 1) * ITEMS_PER_PAGE;
+  newTable();
+  checkPrevBtn();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentPage++;
+  offset = (currentPage - 1) * ITEMS_PER_PAGE;
+  newTable();
+  checkPrevBtn();
+});
 
 const getTable = async (id) => {
   const apiResponse = await fetch(`http://localhost:3000/tables/${id}`);
@@ -148,3 +187,5 @@ form.addEventListener("submit", (event) => {
   };
   saveTable(table);
 });
+
+checkPrevBtn();
