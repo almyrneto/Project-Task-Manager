@@ -138,30 +138,23 @@
     border: none;
 }
 
-.em-andamento {
+.status {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 22px;
+}
+
+.em-andamento {
     color: #F8B04E;
 }
 
 .concluida {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 22px;
     color: #27AE60;
 }
 
 .Interrompida {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 22px;
     color: #EB5757;
 }
 
@@ -181,4 +174,35 @@
     font-size: 15px;
     line-height: 22px;
     color: #2C2661 !important;
+}
+
+.btn-filter {
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    border: 1px solid #68519d;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'poppins';
+    font-style: normal;
+    line-height: 21px;
+    color: #68519d;
+    background-color: white;
+    text-transform: uppercase;
+}
+
+.search-form {
+    border: 1px solid #68519d;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'poppins';
+    font-style: normal;
+    line-height: 1.5;
+    text-transform: uppercase;
+    padding: 0 25px;
+    color: #68519d;
+    width: 250px;
+    height: 30px;
 }
