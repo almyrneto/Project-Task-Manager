@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/page.css" />
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        defer></script>
+    <script src="../js/app.js" defer></script>
+
+</head>
+
+<body onload="newTable()">
+    <div class="d-flex">
+        <div>
+            <div class="sidebar">&nbsp;</div>
+        </div>
+        <div class="container pt-4">
+            <header>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <figure>
+                            <img src="../img/Arnia.png" />
+                        </figure>
+                    </div>
+                </div>
+                <div class="gap-3 d-flex">
+                    <figure>
+                        <img src="../img/clipboard.svg" />
+                    </figure>
+                    <h1 class="title">Gerenciador de Tarefas</h1>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="button" onclick="openModal()">+ Adicionar nova tarefa</button>
+                    </div>
+                </div>
+            </header>
+            <div class="table-container">
+                <table class="table table-borderless table-striped table-hover table-responsive mt-5">
+                    <thead class="header-task">
+                        <tr>
+                            <th scope="col">Núm</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Data de Entrega</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+                <section>
+                    <div id="pagination-container" class="pagination justify-content-between">
+                        <div class="d-flex">
+                            <button class="prev" id="prev-btn" disabled>
+                                <div>&lt;</div>
+                            </button>
+                        </div>
+                        <div class="d-flex">
+                            <button class="next id=" next-btn">
+                                <div ">&gt;</div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id=" modal" class="modal">
+                                    <div class="modal-container modal-lg">
+                                        <div class="header-modal">
+                                            <span class="close" id="close-button" onclick="closeModal()">&times;</span>
+                                        </div>
+                                        <div class="content-modal">
+                                            <h1 class="new-task">Adicionar nova tarefa</h1>
+                                            <form id="table" method="post">
+                                                <div class="row">
+                                                    <div class="col-10">
+                                                        <div class="mb-3">
+                                                            <label for="number" class="form-label">Número</label>
+                                                            <input onchange="checkFields()" type="number" name="number"
+                                                                id="number" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <div class="mb-3">
+                                                            <label for="description"
+                                                                class="form-label">Descrição</label>
+                                                            <input onchange="checkFields()" type="text"
+                                                                name="description" id="description"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="mb-3">
+                                                            <label for="date" class="form-label">Data</label>
+                                                            <input onchange="checkFields()" type="date" name="date"
+                                                                id="date" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="mb-3">
+                                                            <label for="status" class="form-label">Status</label>
+                                                            <select onchange="checkFields()" id="status" name="status"
+                                                                class="form-select">
+                                                                <option value="" disabled selected>Escolha o status
+                                                                </option>
+                                                                <option value="concluida">Concluída</option>
+                                                                <option value="em andamento">Em andamento</option>
+                                                                <option value="Interrompida">Interrompida</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <button onclick="closeModal()" type="button"
+                                                            class="btn">cancelar</button>
+                                                    </div>
+                                                    <div>
+                                                        <button id="save" type="submit" disabled class="btn-modal"
+                                                            value="save">Salvar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="polygon">&nbsp;</div>
+</body>
+
+</html>
