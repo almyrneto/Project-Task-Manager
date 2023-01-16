@@ -35,6 +35,6 @@ function isValidPassword(password) {
 function login(event) {
   event.preventDefault();
   if (validateForm()) {
-    window.location.href = "http://127.0.0.1:5500/html/taskPage.html";
+    window.location.assign("taksPage.html");
   }
 }
