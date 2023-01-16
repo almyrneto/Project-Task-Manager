@@ -35,6 +35,6 @@ function isValidPassword(password) {
 function login(event) {
   event.preventDefault();
   if (validateForm()) {
-    window.location.assign("taksPage.html");
+    window.location.assign("html/taskPage.html");
   }
 }
