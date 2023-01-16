@@ -1,3 +1,4 @@
+console.log("A");
 const modal = document.getElementById("modal");
 const form = document.getElementById("table");
 let currentTable = null;
