@@ -63,8 +63,8 @@
                             </button>
                         </div>
                         <div class="d-flex">
-                            <button class="next id=" next-btn">
-                                <div ">&gt;</div>
+                            <button class="next" id="next-btn">
+                                <div>&gt;</div>
                             </button>
                         </div>
                     </div>
@@ -72,67 +72,62 @@
             </div>
         </div>
     </div>
-    <div id=" modal" class="modal">
-                                    <div class="modal-container modal-lg">
-                                        <div class="header-modal">
-                                            <span class="close" id="close-button" onclick="closeModal()">&times;</span>
-                                        </div>
-                                        <div class="content-modal">
-                                            <h1 class="new-task">Adicionar nova tarefa</h1>
-                                            <form id="table" method="post">
-                                                <div class="row">
-                                                    <div class="col-10">
-                                                        <div class="mb-3">
-                                                            <label for="number" class="form-label">Número</label>
-                                                            <input onchange="checkFields()" type="number" name="number"
-                                                                id="number" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <div class="mb-3">
-                                                            <label for="description"
-                                                                class="form-label">Descrição</label>
-                                                            <input onchange="checkFields()" type="text"
-                                                                name="description" id="description"
-                                                                class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="mb-3">
-                                                            <label for="date" class="form-label">Data</label>
-                                                            <input onchange="checkFields()" type="date" name="date"
-                                                                id="date" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="mb-3">
-                                                            <label for="status" class="form-label">Status</label>
-                                                            <select onchange="checkFields()" id="status" name="status"
-                                                                class="form-select">
-                                                                <option value="" disabled selected>Escolha o status
-                                                                </option>
-                                                                <option value="concluida">Concluída</option>
-                                                                <option value="em andamento">Em andamento</option>
-                                                                <option value="Interrompida">Interrompida</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <div>
-                                                        <button onclick="closeModal()" type="button"
-                                                            class="btn">cancelar</button>
-                                                    </div>
-                                                    <div>
-                                                        <button id="save" type="submit" disabled class="btn-modal"
-                                                            value="save">Salvar</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="polygon">&nbsp;</div>
+    <div id="modal" class="modal">
+        <div class="modal-container modal-lg">
+            <div class="header-modal">
+                <span class="close" id="close-button" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="content-modal">
+                <h1 class="new-task">Adicionar nova tarefa</h1>
+                <form id="table" method="post">
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label for="number" class="form-label">Número</label>
+                                <input onchange="checkFields()" type="number" name="number" id="number"
+                                    class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Descrição</label>
+                                <input onchange="checkFields()" type="text" name="description" id="description"
+                                    class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Data</label>
+                                <input onchange="checkFields()" type="date" name="date" id="date"
+                                    class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="mb-3">
+                                <label for="status" class="form-label">Status</label>
+                                <select onchange="checkFields()" id="status" name="status" class="form-select">
+                                    <option value="" disabled selected>Escolha o status
+                                    </option>
+                                    <option value="concluida">Concluída</option>
+                                    <option value="em andamento">Em andamento</option>
+                                    <option value="Interrompida">Interrompida</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <button onclick="closeModal()" type="button" class="btn">cancelar</button>
+                        </div>
+                        <div>
+                            <button id="save" type="submit" disabled class="btn-modal" value="save">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="polygon">&nbsp;</div>
 </body>
 
 </html>
